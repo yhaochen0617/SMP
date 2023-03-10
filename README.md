@@ -38,10 +38,10 @@ python3 evaluate_repvgg.py
 
 The RMSE results of ResNet/RepVGG on the validation sets are as follows:
 
-model  | RMSE
-------------- | -------------
-ResNet  | 3.15
-RepVGG  | 4.3
+model  | Fid| SMP(ours)|
+------------- | ------------- | -------------
+ResNet  | 4.98 | **3.15**
+RepVGG  | 5.96 | **4.35**
 
 We also provide the checkpoints to re-implement the result we submitted on the leadboard.
 
