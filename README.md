@@ -1,10 +1,10 @@
 # Scoring Your Prediction !
 
-This is the official implementation of the 1st place for the [DATACV]((https://sites.google.com/view/vdu-cvpr23/competition?authuser=0) competition (CVPR 2023 Workshop).
+This is the official implementation of the 1st place for the [DATACV](https://sites.google.com/view/vdu-cvpr23/competition?authuser=0) competition (CVPR 2023 Workshop).
 
 We just train a tiny model (about 6 KB) to score another model predictions (ResNet or RepVGG) ! We can obtain the exciting results when estimating accuracy on label-free test set.
 
-###Prepare
+### Prepare
 
 - Before running the code, you should install torch(1.13.0) and torchvision(0.14.0).
 - Download the origin train/val/test data from [link](https://github.com/xingjianleng/autoeval_baselines) into DATASET.
@@ -22,7 +22,7 @@ data
 	- val
 ```
 
-###Usage
+### Usage
 
 Note that the codebase only support running on the single GPU. You only need run a line code for reproduction.
 
