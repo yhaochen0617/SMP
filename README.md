@@ -16,10 +16,10 @@ ln -s DATASET data
 data folder structure :
 ```
 data
-	- cifar10
-	- test_data
-	- train_data
-	- val
+   - cifar10 (Standard cifar10 dataset)
+   - test_data
+   - train_data
+   - val
 ```
 
 ### Usage
