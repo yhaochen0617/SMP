@@ -1,0 +1,1 @@
+We must emphasize here that **this checkpoint is not the model that produces the final result of ResNet**. Because of our oversight,  the model has not been saved. This checkpoint is our re-implementation, and the performance of the two models on validation sets is comparable (RMSE on validation sets is about 3.15).
