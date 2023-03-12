@@ -24,7 +24,7 @@ data
 
 ### Usage
 
-Note that the codebase only support running on the **single** GPU. You only need run a line code for reproduction.
+Note that the code only support running on the **single** GPU. You just need run a line code for reproduction.
 
 For ResNet: 
 ```bash
@@ -36,6 +36,8 @@ For RepVGG:
 python3 evaluate_repvgg.py
 ```
 
+Note that our codebase saves some intermediate results, and thus the speed will be slightly slower when first time running, but it will be very fast when running again.
+
 The RMSE results of ResNet/RepVGG on the validation sets are as follows:
 
 model  | Fid| SMP(ours)|
@@ -43,8 +45,6 @@ model  | Fid| SMP(ours)|
 ResNet  | 4.98 | **3.15**
 RepVGG  | 5.96 | **4.35**
 
-
-Note that our codebase saves some intermediate results, and thus the speed will be slightly slower when first time running, but it will be very fast when running again.
 
 We also provide the checkpoints to re-implement the result we submitted on the leadboard.
 
@@ -58,5 +58,5 @@ For RepVGG:
 ```bash
 python3 evaluate_repvgg.py -e checkpoint/repvgg/model_cnn.pth+checkpoint/repvgg/model_vit.pth
 ```
-It can produce the same prediction with the best result on leadboard ( for RepVGG ). We adopt the ensemble method of two models to obtain the RepVGG prediction due to difficulty
+It can produce the same prediction with the best result on leadboard ( for RepVGG ). We adopt the ensemble method of two models to obtain the RepVGG prediction due to difficulty (In fact, only using MLP also can obtain similar performance ).
 
