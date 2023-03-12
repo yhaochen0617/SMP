@@ -283,7 +283,6 @@ if __name__ == "__main__":
     dp = 0.0 if args.model=='Mlp' else 0.1
     method = eval(args.model)(train_x.shape[1], drop=dp).cuda()
     ms = cal_param_size(method) / 1e3
-    print(method)
     print(f"===> Train a tiny model({ms} K) for evaluating accuracy with model: {model_name}")
 
     if args.ensemble != '':

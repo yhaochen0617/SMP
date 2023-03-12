@@ -15,7 +15,7 @@ import torch.utils.data
 import torch.nn as nn
 from torch.nn import functional as F
 
-from utils import predict_multiple, store_ans, ensure_file_dir, CIFAR10NP, TRANSFORM, CIFAR10NP_TEST
+from utils import predict_multiple, store_ans, ensure_file_dir, cal_param_size, CIFAR10NP, TRANSFORM, CIFAR10NP_TEST
 from atc import get_atc_threshold
 from fid import get_fid_feature, calculate_frechet_distance
 from model import Mlp
@@ -271,10 +271,11 @@ if __name__ == "__main__":
         val_metrics.append(calculate_metric(dataloader, model, device, atc_thre, fid_mean, fid_cov, f"{i}.npy", 'val', feature_save_root, metrics=use_metric))
     print(f"===> Successing! ")
 
-    print(f"===> Train a tiny model for evaluating accuracy with model: {model_name}")
     train_y = train[:,-1]
     train_x = normalization(train[:,:-1], training=True)
     method = Mlp(train_x.shape[1]).cuda()
+    ms = cal_param_size(method) / 1e3
+    print(f"===> Train a tiny model({ms} K) for evaluating accuracy with model: {model_name}")
     
     if args.load_model != '' and os.path.isfile(args.load_model):
         print(f"===> Loading the checkpoint: {args.load_model}")
